@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion := "3.1.1-RC1"
+ThisBuild / scalaVersion := "3.1.2"
 ThisBuild / organization := "com.47deg"
 ThisBuild / versionScheme := Some("early-semver")
 
@@ -16,6 +16,7 @@ lazy val benchmarks =
 lazy val documentation = project
   .dependsOn(`scala-fx`)
   .enablePlugins(MdocPlugin)
+  .enablePlugins(JavaAppPackaging)
   .settings(mdocOut := file("."))
   .settings(publish / skip := true)
 
